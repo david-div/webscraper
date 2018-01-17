@@ -12,20 +12,30 @@ page = Nokogiri::HTML(open(url))
 title_css = "h3.post-title.entry-title.card-title"
 likes_css = "span.card-count.icon-thumbsup.upvotes-count"
 
-titles = []
-page.css(title_css).each do |title|
-  titles << title.text
+pages_css = "nav.page-navi"
+
+page.css(pages_css).each do |pages|
+  puts pages.text.scan(/[0-9]/).max
 end
 
-likes = []
-page.css(likes_css).each do |like|
-  likes << like.text
-end
-
-CSV.open("theChive.csv", "w") do |file|
-  file << ["Title", "Likes"]
-
-  titles.length.times do |i|
-    file << [titles[i], likes[i]]
-  end
-end
+# titles = []
+# page.css(title_css).each do |title|
+#   titles << title.text
+# end
+#
+# likes = []
+# page.css(likes_css).each do |like|
+#   likes << like.text
+# end
+#
+# pages = []
+# page.css()
+#
+#
+# CSV.open("theChive.csv", "w") do |file|
+#   file << ["Title", "Likes"]
+#
+#   titles.length.times do |i|
+#     file << [titles[i], likes[i]]
+#   end
+# end
