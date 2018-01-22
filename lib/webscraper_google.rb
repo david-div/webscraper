@@ -1,5 +1,7 @@
 require 'mechanize'
 
+# sraping result of searched sites once entered in a form
+
 agent = Mechanize.new
 
 page = agent.get('http://www.google.com')
