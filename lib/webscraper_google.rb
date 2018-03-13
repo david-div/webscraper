@@ -10,13 +10,15 @@ page = agent.get('http://www.google.com')
 google_form = page.form('f')
 
 # q is the name of the input
-google_form.q = 'udemy'
+# <input name='q'>
+google_form.q = 'youtube'
 
 page = agent.submit(google_form)
 
 # when searched in google
-udemy_link = 'h3.r'
+# <h3 class='r'>
+youtube_link = 'h3.r'
 
-page.search(udemy_link).each do |link|
+page.search(youtube_link).each do |link|
   puts link.content
 end
