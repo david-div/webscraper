@@ -33,7 +33,7 @@ page.css('a._3x-5VWa p._6RF5CVD span._342BXW_').each do |line|
   price << line.text
 end
 
-# # storing the data to csv:
+# storing the data to csv:
 CSV.open("./reports/Asos_shoes.csv", "w") do |file|
   # header names
   file << ["Product Name", "Price"]
